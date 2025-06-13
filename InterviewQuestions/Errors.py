@@ -1,0 +1,12 @@
+#IdentationError
+#ValueError
+#AssertionError
+#NameError
+#SyntaxError
+#TypeError
+#IndexError
+#KeyError
+#AtrributeError
+#ZeroDivisonError
+#ImportError
+#ModuleNotFoundError
