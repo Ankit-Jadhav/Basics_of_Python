@@ -248,4 +248,231 @@ test_divison(5,"2")
 a, b, c = [1, 2, 3]
 print(a, b, c)
 
-#Que27: 
+#Que27: Difference between == and is in Python?
+a = [1,2]
+b = [1,2]
+
+print(a ==b)    # True (value comparison)
+print (a is b)    # False (memory/location comparison)
+
+#Que 28 : Swap two numbers
+a,b = 5,10
+a,b = b, a
+
+a = a +b
+b = a - b
+a = a - b
+#Que29 : Remove duplicates from a list:
+lst = [1, 2, 2, 3]
+print(list(set(lst)))
+
+#Que30 : Sort list in ascending and descending order:
+lst.sort()            # ascending
+lst.sort(reverse=True)    # descending
+
+list1 = [1,2,3,3,4,56,1]
+print(sorted(list(set(list1))))
+
+a = set(list1)
+print(sorted(a, reverse = True))
+
+#Que31 : Print 2nd and 3rd largest element of list:
+list1 = [1,2,3,3,4,56,1]
+a = sorted(list(set(list1)))
+print(a[-2], a[-3])
+
+# Que32 : List comprehension (print 1 to 5):
+a = [x for x in range(1,6)]
+print(a)
+
+#Que33 : Print tables of 2 in list form:
+a = [2*x for x in range(1,11)]
+print(a)
+
+#Que34:  Ternary operator example:
+x = 20
+result = "even" if x%2 == 0 else "odd"
+print(result)
+
+
+#Que35 :Lambda with list 
+lst = [1, 2, 3]
+a=list(map(lambda x : x * x , lst))
+print(a)
+
+#Que36 : Use of map, filter, reduce:
+'''| Function   | Purpose                   | Returns         | Example                   |
+| ---------- | ------------------------- | --------------- | ------------------------- |
+| `map()`    | Transform all items       | Modified list   | Square each number        |
+| `filter()` | Filter based on condition | Filtered list   | Keep only even numbers    |
+| `reduce()` | Reduce to single value    | One final value | Multiply or add all items |
+
+'''
+lst = [1, 2, 3, 4]
+squared = list(map(lambda x: x *x, lst))
+print(squared)
+
+even = list(filter(lambda x : x%2 ==0, lst))
+print(even)
+
+from functools import reduce  # ✅ Required import
+sum1 = reduce(lambda x,y : x + y , lst)
+print(sum1)
+
+
+#Que36 : Factorial of any number
+from functools import reduce
+n = 5  # Find factorial of 5
+
+factorial = reduce(lambda x , y : x * y, range(1,n+1))
+print(factorial)
+
+#Que37 : Sum of all natural number
+from functools import reduce
+
+n = 10  # Sum of first 10 natural numbers: 1+2+...+10
+
+total = reduce(lambda x, y: x + y, range(1, n + 1))
+print("Sum is:", total)
+
+#Que38 : min, max , sum
+lst = [1, 2, 2, 3]
+print(min(lst))
+print(max(lst))
+print(sum(lst))
+
+#Que39 : Replace element in list:
+lst[1] = 99
+
+#Que40: Shift even left, odd right:
+arr = [1, 2, 3, 4]
+res = [x for x in arr if x % 2 == 0] + [x for x in arr if x % 2 != 0]
+
+#Que 41 : Print all elements that appear ≥ 2 times:
+dict
+
+#Que 42: Fibonacci Series:
+def fibonacci_series(n):
+    a,b = 0,1
+    result = []
+    for _ in range(n):
+        result.append(a)
+        a,b=b,a+b
+    return result
+
+print(fibonacci_series(100))
+
+#Que 43 : Use of isalpha, isdigit, isalnum:
+s = "abc123"
+s.isalpha(), s.isdigit(), s.isalnum()
+
+#Que44 :  compare two list 
+list1 = [1, 2, 3, 4, 5]
+list2 = [3, 4, 5, 6, 7]
+
+# Find common elements
+common = list(set(list1) & set(list2))
+print("Common elements:", common)
+
+#Maintain order as in original list -If you want to preserve the order from list1, use:
+common = [x for x in list1 if x in list2]
+print("Common elements:", common)
+
+
+#Que 45 : Compare two lists for same elements:
+list1, list2 = [1, 2], [2, 1]
+print(set(list1) == set(list2))
+
+#Que46 : Count of all even and odd numbers
+
+#Que47 : Prime number verify
+
+#Que 48 : Check if both lists have same elements (order doesn't matter)
+
+#Que 49 : index of all values with enumerate
+list1 = [1,2,3,4,51,1,1,2,3]
+for index , char in enumerate(list1):
+    print(index , char)
+
+#Que 50 : index of all values without enumerate function
+list1 = [1,2,3,4,51,1,1,2,3]
+for i in range(len(list1)):
+    print(i,list1[i])
+
+
+#Que51 : list of 1 to N prime number , odd, even
+
+#Que52 : Print the index of 2nd occurence of element
+list1 = [1,2,2,3,4,5,6,1,2,3]
+x = [index for index, value in enumerate(list1) if value == 3][1]
+print(x)
+
+#Que53 : compare two list -- same values , different values  use sort,counter and set all three ways
+
+
+#Que54: Common Operations for Lists Using set:
+l1 = ['a', 'b', 'c']
+l2 = ['b', 'c', 'd', 's', 'k', 'f', 's']
+
+set1 = set(l1)
+set2 = set(l2)
+
+# Intersection: common elements
+print("Intersection (&):", list(set1 & set2))  # ['b', 'c']
+
+# Union: all unique elements from both
+print("Union (|):", list(set1 | set2))  # ['a', 'b', 'c', 'd', 's', 'k', 'f']
+
+# Difference: elements in l1 but not in l2
+print("Difference (-):", list(set1 - set2))  # ['a']
+
+# Symmetric Difference: elements in l1 or l2 but not both
+print("Symmetric Diff (^):", list(set1 ^ set2))  # ['a', 'd', 's', 'k', 'f']
+
+
+#Que55: Intersection with duplicates
+l1 = [1,2,3,4,5]
+l2= [4,5,6,7,8,9]
+result = [x for x in l1 if x in l2]
+print(result)
+
+
+#Que56: is vs ==
+#list - mutable
+a = [1,3,4]
+b =[1,3,4]
+print(a is b )   #exact location of object in memory   - False
+print(a ==b)   #value   - True
+
+#int - immutable
+a = 3 
+b = 3
+print(a is b) - T
+print(a ==b)  - T
+
+#string  - immutable
+a = "3" 
+b = "3"
+print(a is b)
+print(a ==b)
+
+#tuple - immutable
+a = (1,2)
+b = (1,2)
+print(a is b)
+print(a ==b)
+
+
+#Que56: print prime number list
+lower = int(input("enter lower limit"))
+upper = int(input("enter upper limit"))
+
+for num in range(lower,upper+1):
+    if num >1 :
+        for i in range(2, num):
+            if num%i==0:
+                break
+        else:
+            print(num)
+
+#Que57: 

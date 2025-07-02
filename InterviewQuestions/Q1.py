@@ -60,7 +60,74 @@ except ValueError as e:
 
 
     
+#Palindrome
+def is_palindrome(s):
+    return s == s[::-1]
+print(is_palindrome("madam"))
+
+
+#Decorator
+def my_decorator(func):
+    def wrapper():
+        print("something before the function")
+        func()
+        print("something after the function")
+    return wrapper
+
+@my_decorator
+def say_something():
+    print("Hello!")
+
+say_something()
 
 
 
+#ListDict
+list = [1,2,43,True, "Ankit"]
+print(list[4])
 
+dict ={ 'name': 'Ankit', 'age': 26, 'Status':True}
+print(dict['name'])
+
+list.append(56)
+print(list)
+dict['Dob'] = '1996-10-30'
+print(dict)
+
+
+#ListTuple
+my_list = [0, True, "Ankit"]
+print(my_list[1])
+print(my_list)
+
+my_touple = (0, True, "Ankit")
+print(my_touple[2])
+print(my_touple)
+
+for item in my_touple:
+    print(item)
+
+#Arithmetic Operator
+def discount_calculator(price,discount):
+    return price - (price*discount/100)
+
+def test_10_percent_discount():
+    assert discount_calculator(200, 10) ==180
+def test_0_percent_discount():
+    assert discount_calculator(200, 0) ==200
+def test_0_percent_discount():
+    assert discount_calculator(200, 100) == 0
+
+#Asserstion
+def assert_test():
+    assert 5 + 5 == 11
+assert_test()
+
+#Attribute Error
+def test_attribute_error():
+    name = 'Ankit'
+    print(name.push())
+    # ❌ Strings have no 'push'
+test_attribute_error()
+
+#

@@ -1,7 +1,6 @@
-# Ignore everything
-*
 
-# But not these files/folders
-!.gitignore
-!InterviewQuestions/
-!InterviewQuestions/**/*
+
+# # But not these files/folders
+# !.gitignore
+# # !InterviewQuestions/
+# # !InterviewQuestions/**/*
